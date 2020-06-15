@@ -80,14 +80,11 @@ class Shape {
     sides=[4,7,7];
     base=null;
     height=null;
-    constructor(name="triangle",sides=[4,7,7],base,height,length,width,radius){
+    constructor(name="triangle",sides=[4,7,7],base,height){
         this.name = name;
         this.sides = sides;
         this.base = base;
         this.height = height;
-        this.length = length;
-        this.width = width;
-        this.radius = radius;
     }
 
     calcHeight(){
@@ -105,17 +102,17 @@ class Shape {
         console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
     }
 
-    calcAreaOfRectangle() {
-        console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
+    calcAreaOfRectangle(length,width) {
+        console.log(`${this.name}'s area is calculated to be : ${length * width}`);
     }
-    calcPerimeterOfRectangle() {
-        console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
+    calcPerimeterOfRectangle(length,width) {
+        console.log(`${this.name}'s perimeter is calculated to be : ${(2 * length) + (2 * width) }`)
     }
-    calcAreaOfCircle() {
-        console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);
+    calcAreaOfCircle(radius) {
+        console.log(`${this.name}'s area is calculated to be : ${(Math.PI * radius**2).toFixed(2)}`);
     }
-    calcCircumferenceOfCircle() {
-        console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * this.radius).toFixed(2)}`)
+    calcCircumferenceOfCircle(radius) {
+        console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * radius).toFixed(2)}`)
     }
 }
 const triangle = new Shape();
@@ -125,14 +122,14 @@ triangle.calcArea();
 triangle.calcPerimeter();
 console.log("*******************************************************************************************************************************************");
     
-const rectangle = new Shape("rectangle",4,0,0,2,5);
-rectangle.calcAreaOfRectangle();
-rectangle.calcPerimeterOfRectangle();
+const rectangle = new Shape("rectangle",4);
+rectangle.calcAreaOfRectangle(2,5);
+rectangle.calcPerimeterOfRectangle(2,5);
 console.log("*******************************************************************************************************************************************");
 
-const circle = new Shape("Circle",1,0,0,0,0,5);
-circle.calcAreaOfCircle();
-circle.calcCircumferenceOfCircle();
+const circle = new Shape("Circle",1);
+circle.calcAreaOfCircle(5);
+circle.calcCircumferenceOfCircle(5);
 
 
 
