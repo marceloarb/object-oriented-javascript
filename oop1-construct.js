@@ -1,15 +1,72 @@
-//1. Create a Class called WhyClass.  This class should have one property, and two methods.  THe property is called "purpose", and stores a string.  This string should clearly explain why classes are used in Object Oriented Programming.  The first method is called explain().  This method should print the contents stored in the purpose 'field' of the class.  The second method is called pieces().  This 2nd method should print out the various parts that are essential to building a class.  Instantiate the class, and invoke the method so the results are showing in the console once this file is run.
+//1. Create a Class called WhyClass.  This class should have one property, and two methods.
+//  THe property is called "purpose", and stores a string. 
+// This string should clearly explain why classes are used in Object Oriented Programming. 
+// The first method is called explain().  This method should print the contents stored in the purpose 'field' of the class.
+//  The second method is called pieces(). 
+// This 2nd method should print out the various parts that are essential to building a class.
+//  Instantiate the class, and invoke the method so the results are showing in the console once this file is run.
 
-//your code here...
+class WhyClass{
+    constructor(purpose){
+        this.purpose = purpose;
+    }
+    explain(){
+        console.log(this.purpose);
+    }
+    pieces(first,second,third){
+        console.log(`${first} ${second} ${third}`)
+    }
+}
+const useClass = new WhyClass("OOP use classes to make a blueprint for creating objects");
+useClass.explain();
+useClass.pieces("constructor","methods","instance");
 
 
+/*2. You are exploring the rainforests of the Amazon. 
+You have observed many different types of wildlife on your excursion.
+To jog your memory, some different types of wildlife that you observed are found in the following URL :
+https://www.ietravel.com/blog/amazon-rainforest-animals-beginners-guide-21-species.
+Feel free to use other resources online if you wish.
 
-/*2. You are exploring the rainforests of the Amazon.  You have observed many different types of wildlife on your excursion.  To jog your memory, some different types of wildlife that you observed are found in the following URL : https://www.ietravel.com/blog/amazon-rainforest-animals-beginners-guide-21-species.  Feel free to use other resources online if you wish.
+Create a class that can categorize at least 6 of the creatures that you recall observing the Amazon.
+Each creature should have 3 unique characteristics, and 2 unique actions that it can do. */
 
-Create a class that can categorize at least 6 of the creatures that you recall observing the Amazon.  Each creature should have 3 unique characteristics, and 2 unique actions that it can do. */
 
+class Amazon {
+    constructor(name,size,weight){
+        this.name = name;
+        this.size = size;
+        this.weight = weight;
+    }
 
-//your code here...
+    perfil(){
+        console.log(`I am ${this.name}, my size is ${this.size} and my weight is ${this.weight}`);
+    }
+
+    action(action1,action2){
+        console.log(`Here is two unique things I can do: ${action1} and ${action2}`);
+    }
+
+}
+
+const animal1 = new Amazon("Capybara","Large","140 pounds");
+animal1.perfil();
+animal1.action("eat 8 punds of grass per day","I really like water");
+const animal2 = new Amazon("Giant Armadillo","Medium","120 pounds");
+animal2.perfil();
+animal2.action("The Armadillo’s casing can be used for offense as well as defense, and they also possess long front claws and between 80 and 100 teeth (more than any other mammal)","hey’re nocturnal animals and live in a complex system of burrows.");
+const animal3 = new Amazon("Giant River Otter","Large","160 pounds");
+animal3.perfil();
+animal3.action("It is often seen feasting of fish and other small prey in oxbow lakes","Hunting, water pollution and habitat loss are the main causes of their decreasing population numbers.");
+const animal4 = new Amazon("Jaguar","Large","130 pounds");
+animal4.perfil();
+animal4.action("These big cats are excellent at climbing, swimming, and hunting in the trees","It’s estimated that only around 6000 individuals survive in the Peruvian Amazon.");
+const animal5 = new Amazon("Jaguarundi","Small", "20 pounds");
+animal5.perfil();
+animal5.action("Jaguarundis are mainly solitary and active during the day, unlike most felines","Their diet includes small felines, reptiles and ground-feeding birds, as Jaguarundis hunt more on the ground than in trees.");
+const animal6 = new Amazon("Lophostoma Yasuni Bat","Large", "120 pounds");
+animal6.perfil();
+animal6.action("Like most other Bats, it eats insects. ","t’s named after Yasuni National Park");
 
 
 
@@ -19,71 +76,78 @@ Create a class that can categorize at least 6 of the creatures that you recall o
 
 
 class Shape {
-    //your code here...
-}
+    name="triangle";
+    sides=[4,7,7];
+    base=null;
+    height=null;
+    constructor(name="triangle",sides=[4,7,7],base,height,length,width,radius){
+        this.name = name;
+        this.sides = sides;
+        this.base = base;
+        this.height = height;
+        this.length = length;
+        this.width = width;
+        this.radius = radius;
+    }
 
+    calcHeight(){
+        this.height = (Math.sqrt(-(this.sides[0]/2*this.sides[0]/2)+(this.sides[1]*this.sides[1])));
+        console.log(`${this.name}'s height is calculated to be: ${this.height}` )
+    }
 
-const triangle = {
-    name : "triangle",
-    sides : [4,7,7], //lengths of each side
-    base : null,
-    height : null, //determine this height using basic geometry.  You may need to research this one.
-    calcArea : function() {
+    calcArea() {
+        this.base = this.sides[0]
         console.log(`${this.name}'s area is calculated to be : ${.5 * this.base * this.height}`);
-    },
-    calcPerimeter : function() {
+    }
+
+    calcPerimeter() {
+        this.base = this.sides[0]
         console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
     }
-}
 
-triangle.base = triangle.sides[0];  //base is the 1st side in the triangle.sides array.
-triangle.height = 6.71; //determine the height using basic geometry.  How do you calculate the height of a triangle with 2 equal sides?  If you use the formula to caluclate the height, this is a bonus.  If you hard code the correct value here, that will be sufficient, but no bonus :(
-
-console.log(triangle);
-triangle.calcArea();
-triangle.calcPerimeter();
-
-const rectangle = {
-    name : "rectangle",
-    sides : 4,
-    length : 2,
-    width : 5,
-    calcArea : function() {
+    calcAreaOfRectangle() {
         console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
-    },
-    calcPerimeter : function() {
+    }
+    calcPerimeterOfRectangle() {
         console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
     }
-}
-
-console.log(rectangle);
-rectangle.calcArea();
-rectangle.calcPerimeter();
-
-const circle = {
-    name : "circle",
-    sides : 1,
-    radius : 5,
-    calcArea : function() {
+    calcAreaOfCircle() {
         console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);
-    },
-    calcCircumference : function() {
+    }
+    calcCircumferenceOfCircle() {
         console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * this.radius).toFixed(2)}`)
     }
 }
+const triangle = new Shape();
+console.log(Shape);
+triangle.calcHeight();
+triangle.calcArea();
+triangle.calcPerimeter();
+console.log("*******************************************************************************************************************************************");
+    
+const rectangle = new Shape("rectangle",4,0,0,2,5);
+rectangle.calcAreaOfRectangle();
+rectangle.calcPerimeterOfRectangle();
+console.log("*******************************************************************************************************************************************");
 
-console.log(circle);
-circle.calcCircumference();
-circle.calcArea();
+const circle = new Shape("Circle",1,0,0,0,0,5);
+circle.calcAreaOfCircle();
+circle.calcCircumferenceOfCircle();
+
 
 
 /*********************************************** 
 Bonus Exercises:
 
-//4. Create three more instances of the Shape class for a pentagon, hexagon, and an octagon.  Add in  comments explaining the formulas for calculating the perimeter and the areas of these 3 shapes.  Also, as noted above, if you use the formula to calculate the height of the triangle instead of hard coding it, you will also obtain the bonus for this exercise.  The dimensions for the triangle are already provided for you in the triangle object literal.
+//4. Create three more instances of the Shape class for a pentagon, hexagon, and an octagon.
+Add in  comments explaining the formulas for calculating the perimeter and the areas of these 3 shapes.
+Also, as noted above, if you use the formula to calculate the height of the triangle instead of hard coding it,
+you will also obtain the bonus for this exercise.  The dimensions for the triangle are already provided for you in the triangle object literal.
 
 
-//5. Below is a class Earth.  It is instantiated with a earth 'instance'.  Because there is only 1 known earth, we don't want multiple instances of earth.  Modify the class so the properties are usuable WITHOUT instantiating the class.
+//5. Below is a class Earth.  It is instantiated with a earth 'instance'.
+Because there is only 1 known earth, we don't want multiple instances of earth.
+Modify the class so the properties are usuable WITHOUT instantiating the class.
 
 */
 
