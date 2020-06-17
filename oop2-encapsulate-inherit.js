@@ -155,19 +155,20 @@ const AllegisGroup = new Company("Allegis","Allegis Group",1000);
 class Site extends Company{
     constructor(companyName,location){
         super(companyName);
+        this.companyName = companyName;
         this.location = location;
     }
     sayCompanyName(){
-        console.log(this.companyName);
+        console.log(this.getCompanyName());
     }
     companyLocation(){
         return console.log(this.location);
     }
 
+
 }
 const Dallas = new Site("TEKsystems","Dallas");
-Dallas.sayCompanyName();
-Dallas.companyLocation();
+console.log(Dallas)
 const Austin = new Site("TEKsystems","Austin");
 const Boston = new Site("TEKsystems","Boston");
 const SanFrancisco = new Site("Aerotek","San Francisco");
@@ -182,7 +183,26 @@ class Employee{
         this.title = title;
         this.salary = salary;
     }
-}
+    getSalary(){
+        return console.log(`My name is ${this.name} and as a/an ${this.title} I am making ${this.salary}`)
+    }
+    bonusSalary(bonus){
+        return console.log(`I have had an incredible year and received a ${bonus} bonus`);
+    }
+    
+};
+const CEO = new Employee("Mariza","CEO","1.100.00000");
+CEO.getSalary();
+CEO.bonusSalary("20 thousand dollars");
+const Manager = new Employee("Anledi","Manager","800.000,00");
+const Secretary = new Employee("Maria","Secretary","10.000,00");
+const Engineer1 = new Employee("Marcelo","Engineer","200.000,00");
+const Engineer2 = new Employee("Barbosa","Engineer","200.000,00");
+const Finalcial = new Employee("Joselita","Finalcial","120.000,00");
+const Janitor = new Employee("Joselito","Janitor","10.000,00");
+const Marketer = new Employee("Jusara","Marketer","10.000,00");
+const HR = new Employee("Juanito","HR","80.000,00");
+const Lawyer = new Employee("Barbosa","Lawyer","150.000,00");
 
 /****************************************************************************************************************************************************************************************   
 Bonus Exercise:
