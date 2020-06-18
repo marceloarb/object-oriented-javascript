@@ -259,11 +259,11 @@ class Publisher{
     }
 }
 const publisher1 = new Publisher();
-publisher1.setProperty("author1","");
+publisher1.setProperty(author1,"");
 const publisher2 = new Publisher();
-publisher2.setProperty("author2","");
+publisher2.setProperty(author2,"");
 const publisher3 = new Publisher();
-publisher3.setProperty("author3","");
+publisher3.setProperty(author3,"");
 console.log("***************************************************************************************************");
 
 
@@ -316,11 +316,11 @@ class Book {
     }
 }
 const book1 = new Book();
-book1.setProperty("author1","publisher1","review1","Mark Twain");
+book1.setProperty(author1,publisher1,review1,"Mark Twain");
 const book2 = new Book();
-book2.setProperty("author2","publisher2","review2","Stephen King");
+book2.setProperty(author2,publisher2,review2,"Stephen King");
 const book3 = new Book();
-book3.setProperty("author3","publisher3","review3","Jane Austen");
+book3.setProperty(author3,publisher3,review3,"Jane Austen");
 console.log("***************************************************************************************************");
 
 class Bookstore{
@@ -335,7 +335,7 @@ class Bookstore{
         return console.log(this.#infoBook)
     }
 }
-const bookStore1 = new Bookstore(["book1","book2","book3"]);
+const bookStore1 = new Bookstore([book1,book2,book3]);
 bookStore1.setInfoBook("book4");
 bookStore1.getInfoBook();
 
